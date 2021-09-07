@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    width: 100%;
+    background-color: #000;
+    transition: .4s;
+}
+.navbar:hover {
+    background-color: orange;
+
+}
+
+.wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+img {
+    max-width: 100%;
+}
+.navbar::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.navbar .logo-area {
+    float: left;
+    text-align: center;
+    width: 20%;
+}
+.navbar .logo-area img {
+    width: 70px;
+    height: auto;
+    display: block;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+.navbar .menu-area {
+    width: 80%;
+    float: right;
+    text-align: right;
+}
+.navbar .menu-area ul {
+    list-style: none;
+}
+.navbar .menu-area ul li {
+    display: inline-block;
+}
+.navbar .menu-area ul li a {
+    display: block;
+    padding: 15px 20px;
+    line-height: 60px;
+    color: #fff;
+    letter-spacing: 2px;;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.navbar .menu-area ul li a:hover {
+    color: orangered;
+}
+.banner-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.banner-section .wrapper {
+    display: flex;
+}
+.static-txt {
+    font-size: 72px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+.dynamic-txts {
+    margin-left: 30px;
+    font-size: 72px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+    
+    
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+.dynamic-txts li {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+.dynamic-txts li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-left: 2px solid #fff;
+    animation: typing 3s steps(21) infinite; 
+}
+
+@keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 10px);
+    }
+    100% {
+        left: 0;
+    }
+}
+
+/* Portfolio section design start here */
+.portfolio-section {
+    width: 100%;
+    overflow: hidden;
+    background-color: #34495e;
+    padding: 70px 0;
+}
+
+.portfolio-section h3 {
+    font-size: 34px;
+    text-transform: uppercase;
+    color: #ddd;
+    text-align: center;
+    padding-bottom: 40px;
+    position: relative;
+    transition: .3s;
+}
+.portfolio-section h3:hover {
+    color: red;
+}
+
+.portfolio-section .wrapper {
+    width: 94%;
+}
+.portfolio-items {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+}
+.portfolio-section .portfolio-items::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.portfolio-section .portfolio-items .p-box {
+    width: 23.5%;
+    height: 230px;
+    float: left;
+    overflow: hidden;
+    margin-right: 2%;
+    margin-bottom: 15px;
+}
+
+.portfolio-section .portfolio-items .p-box img {
+    width: 100%;
+    height: 230px;
+}
+.portfolio-section .portfolio-items .p-box:nth-child(4) {
+    margin-right: 0;
+}
+.portfolio-section .portfolio-items .p-box:nth-child(8) {
+    margin-right: 0;
+}
+.portfolio-section .portfolio-items .p-box:nth-child(12) {
+    margin-right: 0;
+}
+.portfolio-section .portfolio-items .p-box {
+    position: relative;
+    cursor: pointer;
+}
+.portfolio-section .portfolio-items .p-box .overlay {
+    width: 100%;
+    height: 0;
+    background-color: rgba(255, 68, 0, 0.445);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.7s;
+    transform: scaleY(0);
+    transform-origin: top bottom;
+}
+.portfolio-section .portfolio-items .p-box:hover .overlay {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
+}
+.portfolio-section .portfolio-items .p-box .overlay h4 {
+    padding-top: 70px;
+    font-size: 24px;
+
+}
+.portfolio-section .portfolio-items .p-box .overlay p {
+    padding: 0 15px;
+}
+
+
+.about-section {
+    width: 100%;
+    overflow: hidden;
+    background-color: #34495e;
+    padding: 70px 0;
+}
+
+.about-section .about-text {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.about-section .about-text h2 {
+    font-size: 54px;
+    color: #ddd;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.4s;
+}
+.about-section .about-text p {
+    font-size: 24px;
+    color: #ddd;
+    transition: 0.4s;
+}
+.about-section .about-text h2:hover {
+    color: orangered;
+}
+.about-section .about-text p:hover {
+    color: orange;
+}
+
+.contact-section {
+    width: 100%;
+    overflow: hidden;
+    background-color: #34495e;
+    padding: 70px 0;
+}
+.contact-section h2 {
+    font-size: 54px;
+    text-align: center;
+    color: #ddd;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.contact-section h2:hover {
+    color: orchid;
+}
+.contact-section .contact {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.contact-section .contact form input {
+    width: 60%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+.contact-section .contact form input[type="submit"] {
+    width: 40%;
+    cursor: pointer;
+}
+.contact-section .contact form input[type="submit"]:hover {
+    background-color: orange;
+    color: #fff;
+}
+.contact-section .contact form textarea {
+    width: 60%;
+    padding: 7px 10px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+}
+
+.social-section {
+    width: 100%;
+    overflow: hidden;
+    background-color: #34495e;
+    padding: 70px 0;
+}
+.social-section h2 {
+    font-size: 54px;
+    text-align: center;
+    color: #ddd;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.social-section .social-link {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.social-section .social-link a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    display: block;  
+    text-decoration: none; 
+    border-bottom: 2px solid transparent;
+}
+.social-section .social-link .fab {
+    margin-right: 20px;
+}
+.social-section .social-link a:hover {
+    color: orangered;
+}
+
+.footer-section {
+    width: 100%;
+    overflow: hidden;
+    background-color: #34495e;
+    padding: 70px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px
+}
